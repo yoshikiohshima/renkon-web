@@ -8,7 +8,6 @@
     "vite": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepublish": "npm run build",
     "file-server": "node server.js"
   },
   "devDependencies": {
