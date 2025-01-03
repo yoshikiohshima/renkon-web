@@ -15,9 +15,7 @@ const inspectorCSS = `
 .observablehq--inspect{font:var(--mono_fonts);overflow-x:auto;display:block;white-space:pre}
 .observablehq--error .observablehq--inspect{word-break:break-all;white-space:pre-wrap}`;
 
-let inspector;
-
-export function showInspector(programState /*:ProgramStateType*/, show /*:boolean*/, dom/*:HTMLElement*/) {
+export function newInspector(data /*:any*/, dom/*:HTMLElement*/) {
     if (!document.head.querySelector("#inspector-css")) {
         const link = document.createElement("link");
         link.rel = "stylesheet";
@@ -27,23 +25,7 @@ export function showInspector(programState /*:ProgramStateType*/, show /*:boolea
         document.head.appendChild(link);
     }
 
-    if (!dom) {
-        dom = document.createElement("div");
-        const renkon = document.body.querySelector("#renkon");
-        if (renkon && renkon.parentNode) {
-            renkon.parentNode.insertBefore(dom, renkon.nextSibling);
-        } else {
-            document.body.appendChild(dom);
-        }
-    }
-
-    if (!show) {
-        if (inspector) {
-            inspector.fulfilled(null);
-            inspector = null;
-        }
-    } else {
-        inspector = new Inspector(dom);
-        inspector.fulfilled(programState.resolved);
-    }
+    const inspector = new Inspector(dom);
+    inspector.fulfilled(data);
+    return inspector;
 }
