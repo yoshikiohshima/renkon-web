@@ -10,7 +10,7 @@ export default defineConfig({
           name: 'Renkon-web',
           fileName: 'renkon',
         },
-        minify: true,
+        minify: false,
 //         rollupOptions: {
 //            output: {
 //                manualChunks: {
