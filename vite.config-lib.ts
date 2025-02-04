@@ -8,7 +8,7 @@ export default defineConfig({
           entry: resolve(__dirname, 'src/main.js'),
           formats: ["es"],
           name: 'Renkon-web',
-          fileName: 'renkon',
+          fileName: 'renkon-web',
         },
         minify: false,
 //         rollupOptions: {
