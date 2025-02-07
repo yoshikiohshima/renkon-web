@@ -1,10 +1,12 @@
 {
   "name": "renkon-web",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "type": "module",
   "license": "MIT",
   "main": "dist/renkon-web.js",
-  "files": ["dist/renkon-web.js"],
+  "files": [
+    "dist/renkon-web.js"
+  ],
   "scripts": {
     "dev": "npm-run-all --parallel vite file-server",
     "vite": "vite",
@@ -23,6 +25,6 @@
   "dependencies": {
     "@observablehq/inspector": "^5.0.1",
     "codemirror": "^6.0.1",
-    "renkon-core": "0.2.3"
+    "renkon-core": "0.2.4"
   }
 }
