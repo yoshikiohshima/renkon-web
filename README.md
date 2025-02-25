@@ -15,6 +15,8 @@ To start a Renkon-web application, make a .html file that looks like:
   <body>
     <div id="renkon">
       <script type="reactive">
+         const a = Events.timer(100);
+	 console.log(a);
       </script>
     </div>
     <script type="module">
