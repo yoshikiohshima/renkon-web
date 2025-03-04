@@ -5,7 +5,7 @@ import { basicSetup, EditorView } from "codemirror";
 import {ProgramState, transpileJSX, translateTS} from "renkon-core";
 import {getContentFromHTML, loadFile, makeHTMLFromContent, saveFile} from "./load";
 
-let myResizeHandler //: (() => void) | null;
+let myResizeHandler: (() => void) | null = null;
 
 const css = `html, body, #renkon {
     height: 100%;
@@ -72,8 +72,8 @@ function resizeHandler() {
 export function view(opt?:any) {
     const app = opt?.app;
     const noTicking = opt?.noTicking;
-    
     const url = new URL(window.location.toString());
+    const hideEditor = opt?.hideEditor || url.searchParams.get("hideEditor");
     let maybeDoc = url.searchParams.get("doc");
     let semi;
     if (maybeDoc) {
@@ -82,8 +82,6 @@ export function view(opt?:any) {
             maybeDoc = maybeDoc.slice(0, semi);
         }
     }
-
-    let hideEditor = url.searchParams.get("hideEditor");
 
     const renkon:HTMLElement = document.body.querySelector("#renkon")!;
     const programState = new ProgramState(Date.now(), app, noTicking);
@@ -98,7 +96,7 @@ export function view(opt?:any) {
         window.removeEventListener("resize", myResizeHandler);
     }
     myResizeHandler = resizeHandler;
-    window.addEventListener("resize", myResizeHandler)
+    window.addEventListener("resize", myResizeHandler);
 
     if (maybeDoc) {
         document.querySelector("#fileName")!.textContent = maybeDoc;
