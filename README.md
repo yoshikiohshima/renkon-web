@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Renkon Web is a UI framework built upon FRP (Functional Reactive Programming). Refer to [Renkon-Core](https://github.com/yoshikiohshima/renkon-core) for the core language references.
+Renkon Web is a UI framework built upon FRP (Functional Reactive Programming). Refer to [Renkon-Core](https://github.com/yoshikiohshima/renkon) for the core language references.
 
 To start a Renkon-web application, make a .html file that looks like:
 
