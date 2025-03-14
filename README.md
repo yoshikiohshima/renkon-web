@@ -58,3 +58,21 @@ const dom = html`<div class="foo">${collection.map((word) => html`<span>${word}<
 render(dom, document.querySelector("#output"));
 
 ```
+
+## Development
+
+It is common that this package is updated when the renkon-core package is updated. At the same time it is convenient to test new renkon-core fixes and features in the web environment, so it is common to make a new `renkon-web.js` file with `renkon-core` that is under development.
+
+The following is a low-tech: but for now this is working for me. First do:
+
+  `# npm i <path to dev directory of renkon core>`
+
+in this directory, and then edit code in renkon-core. When you want to test, run
+
+  `# (cd <path to dev directory of renkon core>; npm run build); npm run build-lib`
+
+this creates a new `renkon-web.js` file with the source code of renkon-core. Copy the resulting file if necessary, and test your web app with it.
+
+To publish a renkon-core package, make sure that you run `npm run build` in that directory before running `npm publish`.
+
+TO publish renkon-web, make sure to change the renkon-core dependency in package.json to be the puslihsed version of renkon-core, and then run the above command to make `renkon-web.js`. Then run `npm publish`.
