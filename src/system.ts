@@ -1,4 +1,6 @@
-import { basicSetup, EditorView } from "codemirror";
+import { basicSetup } from "codemirror";
+import {EditorView, keymap} from "@codemirror/view";
+import {indentWithTab} from "@codemirror/commands";
 
 //import { html, htmlLanguage } from "https://esm.sh/@codemirror/lang-html@v6.4.9"
 //import { javascript } from "https://esm.sh/@codemirror/lang-javascript@v6.0.1"
@@ -137,7 +139,7 @@ function createEditorDock(renkon:HTMLElement, programState:ProgramState) {
     editor.classList.add("editor");
     const editorView = new EditorView({
         doc: renkon.innerHTML.trim(),
-        extensions: [basicSetup, EditorView.lineWrapping],
+        extensions: [basicSetup, EditorView.lineWrapping, keymap.of([indentWithTab])],
         parent: editor,
     });
     editorView.dom.style.height = "500px";
