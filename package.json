@@ -27,6 +27,6 @@
     "@codemirror/view": "^6.36.4",
     "@observablehq/inspector": "^5.0.1",
     "codemirror": "^6.0.1",
-    "renkon-core": "0.5.3"
+    "renkon-core": "0.5.4"
   }
 }
