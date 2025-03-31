@@ -12,17 +12,17 @@ const inspectorCSS = `
 .observablehq--index,.observablehq--key{color:var(--syntax_key)}.observablehq--prototype-key{color:#aaa}
 .observablehq--empty{font-style:oblique}.observablehq--purple,.observablehq--string{color:var(--syntax_string)}
 .observablehq--error,.observablehq--red{color:#e7040f}
-.observablehq--inspect{font:var(--mono_fonts);overflow-x:auto;display:block;white-space:pre}
-.observablehq--error .observablehq--inspect{word-break:break-all;white-space:pre-wrap}`;
+.observablehq--inspect{font:var(--mono_fonts);display:block;white-space:pre}
+.observablehq--error .observablehq--inspect{word-break:break-all;white-space:pre-wrap}
+.observablehq--caret{margin-right:4px;vertical-align:baseline;}
+`;
 
 export function newInspector(data /*:any*/, dom/*:HTMLElement*/) {
     if (!document.head.querySelector("#inspector-css")) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.textContent = inspectorCSS;
-        link.id = "inspector-css"
-        document.head.appendChild(link);
+        const style = document.createElement("style");
+        style.textContent = inspectorCSS;
+        style.id = "inspector-css"
+        document.head.appendChild(style);
     }
 
     const inspector = new Inspector(dom);
