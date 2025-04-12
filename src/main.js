@@ -3,13 +3,13 @@ export {ProgramState, parseJSX, transpileJSX, translateTS, globals, version} fro
 export {view} from "./system";
 export {newInspector} from "./inspector";
 import * as C from "codemirror";
-import {keymap} from "@codemirror/view";
+import {keymap, hoverTooltip} from "@codemirror/view";
 import {indentWithTab} from "@codemirror/commands";
 import {javascript, esLint} from "@codemirror/lang-javascript";
 import {linter, lintGutter} from "@codemirror/lint";
 
 import * as eslint from "eslint-linter-browserify";
 
-export const CodeMirror = {...C, keymap, indentWithTab, javascript, linter, lintGutter, esLint, eslint, globals};
+export const CodeMirror = {...C, keymap, indentWithTab, javascript, linter, lintGutter, esLint, eslint, hoverTooltip ,globals};
 
 console.log("Renkon version:" + version);
