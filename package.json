@@ -1,6 +1,6 @@
 {
   "name": "renkon-web",
-  "version": "0.7.7",
+  "version": "0.7.9",
   "type": "module",
   "license": "MIT",
   "main": "dist/renkon-web.js",
@@ -31,6 +31,6 @@
     "codemirror": "^6.0.1",
     "eslint-linter-browserify": "^9.23.0",
     "globals": "^16.0.0",
-    "renkon-core": "0.7.7"
+    "renkon-core": "0.7.9"
   }
 }
