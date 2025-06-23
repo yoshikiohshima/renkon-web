@@ -193,7 +193,7 @@ async function update(renkon:HTMLElement, editorView:EditorView, programState: P
     }
 
     programState.setupProgram(programs as string[]);
-    programState.evaluate(Date.now());
+    programState.evaluator(Date.now());
 }
 
 function toggleDock(dock:HTMLElement, force?:boolean) {
