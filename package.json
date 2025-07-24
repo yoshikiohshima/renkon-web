@@ -1,6 +1,6 @@
 {
   "name": "renkon-web",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "type": "module",
   "license": "MIT",
   "main": "dist/renkon-web.js",

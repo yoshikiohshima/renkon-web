@@ -7,9 +7,10 @@ import {keymap, hoverTooltip} from "@codemirror/view";
 import {indentWithTab} from "@codemirror/commands";
 import {javascript, esLint} from "@codemirror/lang-javascript";
 import {linter, lintGutter} from "@codemirror/lint";
+import {SearchQuery} from "@codemirror/search";
 
 import * as eslint from "eslint-linter-browserify";
 
-export const CodeMirror = {...C, keymap, indentWithTab, javascript, linter, lintGutter, esLint, eslint, hoverTooltip ,globals};
+export const CodeMirror = {...C, keymap, indentWithTab, javascript, linter, lintGutter, esLint, eslint, hoverTooltip, search, SearchQuery, globals};
 
 console.log("Renkon version:" + version);
