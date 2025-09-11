@@ -8,6 +8,7 @@ import * as Com from "@codemirror/commands";
 import * as Lang_J from "@codemirror/lang-javascript";
 import * as Lint from "@codemirror/lint";
 import * as Search from "@codemirror/search";
+import * as State from "@codemirror/state";
 
 import * as eslint from "eslint-linter-browserify";
 
@@ -19,7 +20,8 @@ export const CodeMirror = {
     lint: Lint,
     search: Search,
     "eslint-linter-browserify": eslint,
-    globals
+    globals,
+    state: State,
 };
 
 console.log("Renkon version:" + version);
