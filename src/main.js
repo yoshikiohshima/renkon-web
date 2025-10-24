@@ -1,5 +1,5 @@
 import {version, globals} from "renkon-core";
-export {ProgramState, parseJSX, transpileJSX, translateTS, globals, version} from "renkon-core";
+export {ProgramState, parseJSX, transpileJSX, translateTS, loader, globals, version} from "renkon-core";
 export {view} from "./system";
 export {newInspector} from "./inspector";
 import * as C from "codemirror";
