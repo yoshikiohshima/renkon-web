@@ -1,9 +1,15 @@
-import { basicSetup } from "codemirror";
-import {EditorView, keymap} from "@codemirror/view";
-import {indentWithTab} from "@codemirror/commands";
+// import { basicSetup } from "codemirror";
+// import {EditorView, keymap} from "@codemirror/view";
+// import {indentWithTab} from "@codemirror/commands";
 //import { html, htmlLanguage } from "https://esm.sh/@codemirror/lang-html@v6.4.9"
 import {ProgramState, transpileJSX, translateTS} from "renkon-core";
 import {getContentFromHTML, loadFile, makeHTMLFromContent, saveFile} from "./load";
+
+import {CodeMirror} from "renkon-codemirror";
+const basicSetup = CodeMirror.basicSetup;
+const {EditorView, keymap} = CodeMirror.view;
+const {indentWithTab} = CodeMirror.commands;
+
 
 let myResizeHandler: (() => void) | null = null;
 

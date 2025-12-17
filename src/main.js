@@ -1,27 +1,8 @@
-import {version, globals} from "renkon-core";
 export {ProgramState, parseJSX, transpileJSX, translateTS, loader, globals, version} from "renkon-core";
 export {view} from "./system";
-export {newInspector} from "./inspector";
-import * as C from "codemirror";
-import * as V from "@codemirror/view";
-import * as Com from "@codemirror/commands";
-import * as Lang_J from "@codemirror/lang-javascript";
-import * as Lint from "@codemirror/lint";
-import * as Search from "@codemirror/search";
-import * as State from "@codemirror/state";
+export {CodeMirror} from "renkon-codemirror";
+export {newInspector} from "renkon-inspector";
 
-import * as eslint from "eslint-linter-browserify";
-
-export const CodeMirror = {
-    ...C,
-    view: V,
-    commands: Com,
-    "lang-javascript": Lang_J,
-    lint: Lint,
-    search: Search,
-    "eslint-linter-browserify": eslint,
-    globals,
-    state: State,
-};
-
-console.log("Renkon version:" + version);
+import packageJson from "../package.json";
+const version = packageJson.version;
+console.log("Renkon Web version:" + version);
