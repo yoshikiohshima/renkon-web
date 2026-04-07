@@ -1,6 +1,6 @@
 {
   "name": "renkon-web",
-  "version": "0.10.7",
+  "version": "0.10.8",
   "type": "module",
   "license": "MIT",
   "main": "dist/renkon-web.js",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "renkon-codemirror": "0.10.6",
-    "renkon-core": "^0.10.7",
+    "renkon-core": "0.10.8",
     "renkon-inspector": "0.10.6"
   }
 }
